@@ -1,6 +1,6 @@
 Portofolio
 
-Udacity Fullsatack Nonodegree - Project 2
+Udacity Fullsatack Nanodegree - Project 2
 
 Created by Michael
 
