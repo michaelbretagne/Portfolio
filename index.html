@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="Vendor/grid.css">
         <link rel="stylesheet" type="text/css" href="Vendor/normalize.css">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,15 +12,15 @@
     </head>
     <body>
         <div id="wrapper">
-            <div id="header">
-                <div class="logo1">
+            <header>
+                <div class="logo_michael">
                     <a href="http://michaeldonal.com/contact.php">Michael</a>
                 </div>
-                <div class="logo2">
+                <div class="logo_donal">
                     <a href="http://michaeldonal.com/contact.php">Donal</a>
                 </div>  
-            </div>
-            <div id="content">
+            </header>
+            <section>
                 <div class="projects section group">
                     <h1>My projects</h1>
                     <div class="box1 col span-1-of-4">
@@ -28,7 +28,18 @@
                             <a href="http://176.32.230.51/myudemywebproject.com">Omnifood</a>
                         </div>
                         <div class="screenshot">
-                            <a href="http://176.32.230.51/myudemywebproject.com"><img src="Images/Omnifood-1600_large_2x.png" sizes= "100vw" srcset="Images/Omnifood-900_medium_1x.png 900w, Images/Omnifood-600_small_1x.png 600w, Images/Omnifood-480_phone_2x.png 480w" alt="Omnifood"></a>
+                            <a href="http://176.32.230.51/myudemywebproject.com/"><img src="Images/Omnifood-1600_large_2x.png" sizes= "100vw" srcset="Images/Omnifood-900_medium_1x.png 900w, Images/Omnifood-600_small_1x.png 600w, Images/Omnifood-480_phone_2x.png 480w" alt="Omnifood"></a>
+                            <a class="myBtn">Click me for more details</a>
+                            <div class="myModal modal">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <span class="close">×</span>
+                                        <p>Omnifood</p>
+                                        <img class="modal_img" src="Images/Omnifood-480_phone_1x.png" alt="Omnifood">
+                                        <p>Modern Web Design full of stunning CSS Animation and jQuery. This was a code along from an instructor on Udemy. I used this course to learn and understand modern animations using css and jQuery.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="box2 col span-1-of-4">
@@ -36,7 +47,18 @@
                             <a href="https://github.com/michaelbretagne/Movie_Trailer_Website">Movie Website</a>
                         </div>
                         <div class="screenshot">
-                            <a href="https://github.com/michaelbretagne/Movie_Trailer_Website"><img src="Images/Movie_website-1600_large_2x.png" sizes= "100vw" srcset="Images/Movie_website-900_medium_1x.png 900w, Images/Movie_website-600_small_1x.png 600w, Images/Movie_website-480_phone_1x.png 480w" alt="Movie Website Image"></a>
+                            <a href="https://github.com/michaelbretagne/Movie_Trailer_Website"><img src="Images/Movie_website-1600_large_2x.png" sizes= "100vw" srcset="Images/Movie_website-900_medium_1x.png 900w, Images/Movie_website-600_small_1x.png 600w, Images/Movie_website-480_phone_2x.png 480w" alt="Movie Website Image"></a>
+                            <a class="myBtn">Click me for more details</a>
+                            <div class="myModal modal">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                      <span class="close">×</span>
+                                      <p>Movie Website</p>
+                                      <img class="modal_img" src="Images/Movie_website-480_phone_1x.png" alt="Movie Website Image">
+                                      <p>This is my submission for Project P1: Movie Trailer Website, part of Udacity's Full Stack Web Developer Nanodegree. This was a good introduction using Python with a template</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="box3 col span-1-of-4">
@@ -44,7 +66,18 @@
                             <a href="#">Coming soon</a>
                         </div>
                         <div class="screenshot">
-                            <a href="#"><img src="Images/Web-under-construction-1600_large_2x.png" sizes= "100vw" srcset="Images/Web-under-construction-900_medium_1x.png 900w, Images/Web-under-construction-600_small_1x.png 600w, Images/Web-under-construction-480_phone_2x.png 480w" alt="Under constructionUnder construction"></a>
+                            <a href="#"><img  src="Images/Web-under-construction-1600_large_2x.png" sizes= "100vw" srcset="Images/Web-under-construction-900_medium_1x.png 900w, Images/Web-under-construction-600_small_1x.png 600w, Images/Web-under-construction-480_phone_2x.png 480w" alt="Under construction"></a>
+                            <a class="myBtn">Click me for more details</a>
+                            <div class="myModal modal">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                      <span class="close">×</span>
+                                      <p>Coming soon</p>
+                                      <img class="modal_img" src="Images/Web-under-construction-480_phone_1x.png" alt="Under construction">
+                                      <p>Awesome website on the way. Come back later for updates</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="box4 col span-1-of-4">
@@ -53,18 +86,77 @@
                         </div>
                         <div class="screenshot">
                             <a href="#"><img src="Images/Web-under-construction-1600_large_2x.png" sizes= "100vw" srcset="Images/Web-under-construction-900_medium_1x.png 900w, Images/Web-under-construction-600_small_1x.png 600w, Images/Web-under-construction-480_phone_2x.png 480w" alt="Under construction"></a>
+                            <a class="myBtn" id="a_last">Click me for more details</a>
+                            <div class="myModal modal">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                      <span class="close">×</span>
+                                      <p>Coming soon</p>
+                                      <img class="modal_img" src="Images/Web-under-construction-480_phone_1x.png" alt="Under construction">
+                                      <p>Awesome website on the way. Come back later for updates</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="footer">
+            </section>
+            <footer>
                 <ul class="social-links">
                     <li><a href="https://www.github.com/michaelbretagne"><i class="ion-social-github"></i></a></li>
                     <li><a href="https://www.twitter.com/michael_donal"><i class="ion-social-twitter"></i></a></li>
                     <li><a href="https://www.linkedin.com/in/michael-donal-35b9aa28"><i class="ion-social-linkedin"></i></a></li>
                     <li><a href="http://www.michaeldonal.com"><i class="ion-android-globe"></i></a></li>   
                 </ul>
-            </div>
-        </div>        
+            </footer>
+            
+            <script>
+                // Get the modal
+                var myModal_1 = document.getElementsByClassName('myModal')[0];
+                var myModal_2 = document.getElementsByClassName('myModal')[1];
+                var myModal_3 = document.getElementsByClassName('myModal')[2];
+                var myModal_4 = document.getElementsByClassName('myModal')[3];
+
+                // Get the button that opens the modal
+                var myBtn_1 = document.getElementsByClassName("myBtn")[0];
+                var myBtn_2 = document.getElementsByClassName("myBtn")[1];
+                var myBtn_3 = document.getElementsByClassName("myBtn")[2];
+                var myBtn_4 = document.getElementsByClassName("myBtn")[3];
+
+                // Get the <span> element that closes the modal
+                var close_btn_1 = document.getElementsByClassName("close")[0];
+                var close_btn_2 = document.getElementsByClassName("close")[1];
+                var close_btn_3 = document.getElementsByClassName("close")[2];
+                var close_btn_4 = document.getElementsByClassName("close")[3];
+
+                // When the user clicks the button, open the modal
+                myBtn_1.onclick = function() {
+                    myModal_1.style.display = "block";
+                }
+                myBtn_2.onclick = function() {
+                    myModal_2.style.display = "block";
+                }
+                myBtn_3.onclick = function() {
+                    myModal_3.style.display = "block";
+                }
+                myBtn_4.onclick = function() {
+                    myModal_4.style.display = "block";
+                }
+            
+                // When the user clicks on <span> (x), close the modal
+                close_btn_1.onclick = function() {
+                    myModal_1.style.display = "none";
+                }
+                close_btn_2.onclick = function() {
+                    myModal_2.style.display = "none";
+                }
+                close_btn_3.onclick = function() {
+                    myModal_3.style.display = "none";
+                }
+                close_btn_4.onclick = function() {
+                    myModal_4.style.display = "none";
+                }
+            </script>
+        </div>
     </body>
 </html>

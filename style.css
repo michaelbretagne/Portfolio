@@ -21,13 +21,15 @@ body {
     padding: 0;
     background: no-repeat fixed center;
     background-size: cover;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(Images/background-1600_large_1x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(Images/background-1600_large_1x.jpg);
 }
 
 #wrapper {
-	min-height:100%;
-	position:relative;
+	min-height: 100%;
+	position: relative;
 }
-#header {
+header {
     width: 100%;
     height: 80px;
     top: 0;
@@ -35,23 +37,33 @@ body {
 	background-color: #0f0f0f;
 }
 
-#content {
+section {
     padding-top: 50px;
-	padding-bottom:100px;
-    
+	padding-bottom: 100px;
 }
-#footer {
-	width:100%;
-	height:100px;
+footer {
+	width: 100%;
+	height: 100px;
 	position: fixed;
-	bottom:0;
+	bottom: 0;
 	text-align: center;
-    background-color: #555555;
+    background-color: #555;
 }
 
+/*--------------<p> tag--------------------*/
+
+p {
+    color: #e6e4e4;
+    padding-bottom: 40px;
+}
+
+/*-Last button "Click me for more details"-*/
+
+#a_last { padding-bottom: 120px; }
+    
 /*---------Content of the header-----------*/
 
-.logo1 {
+.logo_michael {
     float: left;
     font-family: fantasy;
     font-size: 22px;
@@ -59,7 +71,7 @@ body {
     margin: 25px 0 20px 20px;
 }
 
-.logo2 {
+.logo_donal {
     float: left;
     font-family: fantasy;
     font-size: 26px;
@@ -67,8 +79,8 @@ body {
     margin: 25px 0 20px 0;
 }
 
-.logo1 a { color:#fff }
-.logo2 a  { color: #7be3e3; }
+.logo_michael a { color:#fff }
+.logo_donal a  { color: #7be3e3; }
 
 /*-------------------Links-----------------*/
 
@@ -99,7 +111,7 @@ h1 {
 .box4 {
     margin: auto;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .projects {
@@ -110,7 +122,7 @@ h1 {
 
 .projects a:link,
 .projects a:visited {
-    padding: 8px 0px;
+    display: inline-block;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -122,25 +134,36 @@ h1 {
     color: #7be3e3;
 }
 
-.screenshot a img {
-    margin-top: 50px;
-    margin-bottom: 80px;
-    width: 90%;
-    height: auto;
+.screenshot {
+    padding: 0 10px;
+}
 
+.screenshot a {
+    margin: 40px 0 15px 0;
+}
+
+.screenshot a img {
+    width: 90%;
 }
 
 /*------------Images animations------------*/
 
 .screenshot img:hover,
 .scrrenshot img:active {
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 /*--------- Icons/Links (footer)-----------*/
 
 .social-links {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     list-style: none;
     padding-top: 40px;
@@ -151,6 +174,7 @@ h1 {
 .social-links li a:visited {
     font-size: 200%; 
     color: #888;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
     margin-right: 10px;
     margin-left: 10px;
@@ -160,6 +184,7 @@ h1 {
 .ion-social-twitter,
 .ion-social-linkedin,
 .ion-android-globe {
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -173,32 +198,117 @@ h1 {
 
 .ion-android-globe:hover { color: rgba(123, 227, 227, 1); }
 
-/*---------------Media Queries-------------*/
+/*----------------Modals------------------*/
 
-@media only screen and (min-width: 901px) {
-
-    body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(Images/background-1600_large_1x.jpg);
-    }
+/* Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding-top: 15%;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color:rgba(0,0,0,0.4);
 }
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    width: 30%;
+    height: auto;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px #000;
+    background-color: #888;
+    -webkit-animation-name: animatetop;
+    animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    
+}
+
+/* Modal image */
+.modal_img {
+    display: block;
+    width: 45%;
+    height: auto;
+    margin: 0 auto 50px auto;
+    -webkit-transform: none;
+    transform: none;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    float: right;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.close:hover,
+.close:active {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes animatetop {
+    from { top:-300px; opacity:0; }
+    to { top:0; opacity:1; }
+}
+
+
+
+/*---------------Media Queries-------------*/
 
 @media only screen and (min-width: 601px) and (max-width: 900px) {
 
     body {
+         background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(images/background-900_medium_1x.jpg);
          background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(images/background-900_medium_1x.jpg);
     }
+    
+    .modal { padding-top: 25%; }
+    
+    .modal-content { width: 60%; }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 600px) {
 
     body {
+         background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(images/background-600_small_1x.jpg);
          background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(images/background-600_small_1x.jpg);
     }
+    
+    .modal { padding-top: 45%; }
+    
+    .modal-content { width: 65%; }
 }
 
 @media only screen and (max-width: 480px) {
 
     body {
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(images/background-480_phone_2x.jpg);
         background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(images/background-480_phone_2x.jpg);
     }
+    
+    h1 {
+        font-size: 150%;
+        padding: 40px 0 15px 0;
+    }
+    
+    .screenshot a {
+        margin-top: 15px;
+    }
+    
+    .modal-content { width: 70%; }
 }
